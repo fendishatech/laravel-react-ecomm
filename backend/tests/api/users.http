@@ -1,0 +1,42 @@
+@base_url = http://localhost:8000/api
+
+# Register a new user
+###
+POST {{base_url}}/register HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "password123"
+}
+
+# Login with the registered user
+###
+POST {{base_url}}/login HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "email": "johndoe@example.com",
+    "password": "password123"
+}
+
+
+# Test the logout endpoint
+###
+POST {{base_url}}/logout HTTP/1.1
+
+
+# Test the update endpoint
+###
+PUT {{base_url}}/user HTTP/1.1
+
+Content-Type: "application/json"
+
+{
+    "name": "Jane Doe"
+}
+
+# Test the delete endpoint
+###
+DELETE {{base_url}}/user HTTP/1.1
